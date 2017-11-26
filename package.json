@@ -5,7 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod && cp ./src/electron/entry.js ./dist/ && cp ./src/electron/package.json ./dist/",
+    "build": "ng build && cp ./src/electron/entry.js ./dist/ && cp ./src/electron/package.json ./dist/",
+    "build:prod": "ng build --prod && cp ./src/electron/entry.js ./dist/ && cp ./src/electron/package.json ./dist/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -36,14 +37,16 @@
     "font-awesome": "^4.7.0",
     "googleapis": "^23.0.0",
     "jquery": "3.2.1",
+    "material-design-icons": "^3.0.1",
     "moment": "^2.19.2",
     "perfect-scrollbar": "^1.2.0",
+    "roboto-fontface": "^0.8.0",
     "rxjs": "^5.5.2",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.18"
   },
   "devDependencies": {
-    "@angular/cli": "^1.5.4",
+    "@angular/cli": "next",
     "@angular/compiler-cli": "^5.0.3",
     "@types/bootstrap": "^3.3.36",
     "@types/chartist": "^0.9.37",
