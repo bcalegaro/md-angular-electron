@@ -29,6 +29,6 @@ Run `yarn build` to build the project in production modo. The build will be stor
 
 ## References
 
-* [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)[![version][version-badge]][CHANGELOG]
+* [Material Dashboard Angular - Free Bootstrap Material Design Admin](https://www.creative-tim.com/product/material-dashboard-angular2)
 
 * [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
