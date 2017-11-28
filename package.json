@@ -1,17 +1,19 @@
 {
-  "name": "md-free-angular-cli",
+  "name": "md-angular-electron",
   "version": "1.4.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && cp ./src/electron/entry.js ./dist/ && cp ./src/electron/package.json ./dist/",
-    "build:prod": "ng build --prod && cp ./src/electron/entry.js ./dist/ && cp ./src/electron/package.json ./dist/",
+    "build":
+      "ng build --prod && cp ./src/electron/entry.js ./dist/ && cp ./src/electron/package.json ./dist/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "electron:live": "concurrently \"electron ./src/electron/entry.live.js\" \"yarn start\"",
-    "electron": "electron dist"
+    "electron:live":
+      "concurrently \"electron ./src/electron/entry.live.js\" \"yarn start\"",
+    "electron": "electron dist",
+    "dist": "build --win"
   },
   "private": true,
   "dependencies": {
@@ -33,7 +35,6 @@
     "classlist.js": "^1.1.20150312",
     "concurrently": "^3.5.1",
     "core-js": "^2.5.1",
-    "electron": "^1.7.9",
     "font-awesome": "^4.7.0",
     "googleapis": "^23.0.0",
     "jquery": "3.2.1",
@@ -54,6 +55,8 @@
     "@types/jquery": "^3.2.16",
     "@types/node": "^8.0.53",
     "codelyzer": "^4.0.1",
+    "electron": "^1.7.9",
+    "electron-builder": "^19.46.4",
     "jasmine-core": "^2.8.0",
     "jasmine-spec-reporter": "^4.2.1",
     "karma": "^1.7.1",
@@ -66,5 +69,22 @@
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
     "typescript": ">=2.4.2 <2.5.0"
+  },
+  "build": {
+    "appId": "com.bcalegaro.md-angular-electron",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis" : {
+      "oneClick" : false,
+      "allowToChangeInstallationDirectory" : true
+    },
+
+    "directories": {
+      "output": "release",
+      "app": "dist",
+      "buildResources": "build"
+    }
   }
 }
